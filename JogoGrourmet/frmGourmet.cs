@@ -43,7 +43,8 @@ namespace JogoGrourmet
 
         private void AcertouPrato(PratoModel prato)
         {
-            MessageBox.Show("Acertei! : ) " + prato.Nome, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Acertei! : ) " + prato.Nome, "Informação", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AprenderPrato(PratoModel prato)
@@ -67,20 +68,27 @@ namespace JogoGrourmet
             {
                 retorno = p;
                 p.Pensou = false;
-                if (MessageBox.Show($"O prato que você pensou é {p.Nome} ?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"O prato que você pensou é {p.Nome} ?", 
+                    "Confirmar",   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     p.Pensou = true;
                     retorno = PerguntarPrato(PratoService.Listar(p.Id));
                     if (retorno == null) retorno = p;
                     break;
                 }
+                if (p.Pensou) break;
             }
             return retorno;
         }
 
-        private void InicioLabel_Click(object sender, EventArgs e)
+
+        private void InicioLabel_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(PratoService.Analizar(),"Informação",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (e.Button == MouseButtons.Right)
+            {
+                //MessageBox.Show(PratoService.Analizar(), "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

@@ -44,7 +44,7 @@
             this.InicioLabel.Size = new System.Drawing.Size(236, 19);
             this.InicioLabel.TabIndex = 0;
             this.InicioLabel.Text = "Pense em um prato que gosta...";
-            this.InicioLabel.Click += new System.EventHandler(this.InicioLabel_Click);
+            this.InicioLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.InicioLabel_MouseClick);
             // 
             // IniciarButton
             // 

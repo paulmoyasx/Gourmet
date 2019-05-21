@@ -10,16 +10,18 @@ namespace JogoGrourmet
     {
         private static List<PratoModel> _pratos = new  List <PratoModel>();
 
-        /// <summary>
-        /// Listar pratos 
-        /// </summary>
-        /// <param name="pai"></param>
-        /// <returns></returns>
         public static List<PratoModel> Listar(int pai = 0)
         {
             InicializarPratos();
-            //return _pratos.Where(x => x.Pai == pai).OrderBy(x => x.Id).ThenByDescending(x => x.Filhos).ToList();
-            return _pratos.Where(x => x.Pai == pai).OrderBy(x => x.Id).ToList();
+            if (pai == 0)
+            {
+                return _pratos.Where(x => x.Pai == pai).OrderBy(x => x.Id).ToList();
+            }
+            else
+            {
+                return _pratos.Where(x => x.Pai == pai).OrderByDescending(x => x.Filhos).ThenBy(x => x.Id).ToList();
+            }
+
         }
         private static void InicializarPratos()
         {
@@ -30,19 +32,14 @@ namespace JogoGrourmet
                 Adicionar(new PratoModel { Nome = "Bolo de chocolate", Id=int.MaxValue});
             }
         }
-        /// <summary>
-        /// Adicionar prato
-        /// </summary>
-        /// <param name="prato"></param>
-        /// <returns></returns>
+
         public static PratoModel Adicionar(PratoModel prato)
         {
             if(prato.Id==0) prato.Id = _pratos.Count+1;
-            prato.Pai = prato.Pai;
             if (prato != null && !string.IsNullOrEmpty(prato.Nome))
             {
                 _pratos.Add(prato);
-                PratoModel pai = Consutlar(prato.Id);
+                PratoModel pai = Consutlar(prato.Pai);
                 if (pai != null) pai.Filhos++;
 
             }
@@ -52,28 +49,25 @@ namespace JogoGrourmet
             }
             return prato;
         }
-        /// <summary>
-        /// Consultar um prato por Id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+
         public static PratoModel Consutlar(int id)
         {
             return _pratos.FirstOrDefault(x => x.Id == id);
         }
 
-
+        /*
         public static string Analizar(List<PratoModel> lista = null)
         {
             if (lista == null) lista = Listar();
             StringBuilder str = new StringBuilder();
             foreach (var item in lista)
             {
-                str.AppendLine($@"id={item.Id} pai:{item.Pai} {item.Nome} ");
+                str.AppendLine($@"id={item.Id} pai:{item.Pai} filhos: {item.Filhos} {item.Nome} ");
                 str.AppendLine(Analizar(Listar(item.Id)));
             }
             return str.ToString();
         }
+        */
 
 
 

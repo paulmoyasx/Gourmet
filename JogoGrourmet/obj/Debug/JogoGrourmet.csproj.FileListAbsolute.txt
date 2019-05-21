@@ -25,3 +25,12 @@ D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.csproj.GenerateResource.cache
 D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.csproj.CoreCompileInputs.cache
 D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.exe
 D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.pdb
+C:\repo\Gourmet\JogoGrourmet\bin\Debug\JogoGrourmet.exe.config
+C:\repo\Gourmet\JogoGrourmet\bin\Debug\JogoGrourmet.exe
+C:\repo\Gourmet\JogoGrourmet\bin\Debug\JogoGrourmet.pdb
+C:\repo\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.frmGourmet.resources
+C:\repo\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.Properties.Resources.resources
+C:\repo\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.csproj.GenerateResource.cache
+C:\repo\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.csproj.CoreCompileInputs.cache
+C:\repo\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.exe
+C:\repo\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.pdb
