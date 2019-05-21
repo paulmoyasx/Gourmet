@@ -1,0 +1,9 @@
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\bin\Release\JogoGrourmet.exe.config
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\bin\Release\JogoGrourmet.exe
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\bin\Release\JogoGrourmet.pdb
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\obj\Release\JogoGrourmet.frmGourmet.resources
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\obj\Release\JogoGrourmet.Properties.Resources.resources
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\obj\Release\JogoGrourmet.csproj.GenerateResource.cache
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\obj\Release\JogoGrourmet.csproj.CoreCompileInputs.cache
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\obj\Release\JogoGrourmet.exe
+C:\Users\PauL\source\repos\JogoGrourmet\JogoGrourmet\obj\Release\JogoGrourmet.pdb
