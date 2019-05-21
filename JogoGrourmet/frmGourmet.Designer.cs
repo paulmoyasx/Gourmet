@@ -71,7 +71,7 @@
             this.MaximizeBox = false;
             this.Name = "frmGourmet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Jogo Gourmet - Paul Moya";
+            this.Text = "Jogo Gourmet - Paul Moya V2";
             this.ResumeLayout(false);
             this.PerformLayout();
 

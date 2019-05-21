@@ -54,7 +54,8 @@ namespace JogoGrourmet
                 string novoPai = Interaction.InputBox($"{ novoPrato} é ____________ mas { prato.Nome} não.", "Complete");
                 if (!string.IsNullOrEmpty(novoPai))
                 {
-                     PratoService.Adicionar(new PratoModel { Nome = novoPrato, Pai = new PratoModel { Nome = novoPai, Pai = prato.Pai }.Id });
+                    prato = PratoService.Adicionar(new PratoModel { Nome = novoPai, Pai = prato.Pai });
+                    PratoService.Adicionar(new PratoModel { Nome = novoPrato, Pai = prato.Id});
                 }
             }
         }
@@ -79,7 +80,7 @@ namespace JogoGrourmet
 
         private void InicioLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(PratoService.Analizar());
+            MessageBox.Show(PratoService.Analizar(),"Informação",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

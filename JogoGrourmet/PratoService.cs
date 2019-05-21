@@ -10,17 +10,28 @@ namespace JogoGrourmet
     {
         private static List<PratoModel> _pratos = new  List <PratoModel>();
 
+        /// <summary>
+        /// Listar pratos 
+        /// </summary>
+        /// <param name="pai"></param>
+        /// <returns></returns>
+        public static List<PratoModel> Listar(int pai = 0)
+        {
+            InicializarPratos();
+            //return _pratos.Where(x => x.Pai == pai).OrderBy(x => x.Id).ThenByDescending(x => x.Filhos).ToList();
+            return _pratos.Where(x => x.Pai == pai).OrderBy(x => x.Id).ToList();
+        }
         private static void InicializarPratos()
         {
             if (_pratos.Count == 0)
             {
                 Adicionar(new PratoModel { Nome = "Massa", Id = -1 });
                 Adicionar(new PratoModel { Nome = "Lassanha", Pai = -1 } );
-                Adicionar(new PratoModel { Nome = "Bolo de chocolate" });
+                Adicionar(new PratoModel { Nome = "Bolo de chocolate", Id=int.MaxValue});
             }
         }
         /// <summary>
-        /// 
+        /// Adicionar prato
         /// </summary>
         /// <param name="prato"></param>
         /// <returns></returns>
@@ -42,23 +53,13 @@ namespace JogoGrourmet
             return prato;
         }
         /// <summary>
-        /// 
+        /// Consultar um prato por Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public static PratoModel Consutlar(int id)
         {
             return _pratos.FirstOrDefault(x => x.Id == id);
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="pai"></param>
-        /// <returns></returns>
-        public static List<PratoModel> Listar(int pai=0)
-        {
-            InicializarPratos();
-            return _pratos.Where(x => x.Pai==pai).OrderBy(x => x.Id).ThenByDescending(x=>x.Filhos).ToList();
         }
 
 
