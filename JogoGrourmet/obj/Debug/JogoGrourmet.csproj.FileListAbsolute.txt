@@ -16,3 +16,12 @@ C:\repo\PaulMoya\JogoGrourmet\obj\Debug\JogoGrourmet.pdb
 C:\repo\PaulMoya\JogoGrourmet\bin\Debug\JogoGrourmet.exe.config
 C:\repo\PaulMoya\JogoGrourmet\bin\Debug\JogoGrourmet.exe
 C:\repo\PaulMoya\JogoGrourmet\bin\Debug\JogoGrourmet.pdb
+D:\git\Gourmet\JogoGrourmet\bin\Debug\JogoGrourmet.exe.config
+D:\git\Gourmet\JogoGrourmet\bin\Debug\JogoGrourmet.exe
+D:\git\Gourmet\JogoGrourmet\bin\Debug\JogoGrourmet.pdb
+D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.frmGourmet.resources
+D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.Properties.Resources.resources
+D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.csproj.GenerateResource.cache
+D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.csproj.CoreCompileInputs.cache
+D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.exe
+D:\git\Gourmet\JogoGrourmet\obj\Debug\JogoGrourmet.pdb
