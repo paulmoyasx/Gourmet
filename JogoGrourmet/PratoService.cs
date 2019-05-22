@@ -55,19 +55,24 @@ namespace JogoGrourmet
             return _pratos.FirstOrDefault(x => x.Id == id);
         }
 
-        /*
-        public static string Analizar(List<PratoModel> lista = null)
+        
+        public static string Conteudo(List<PratoModel> lista = null)
         {
             if (lista == null) lista = Listar();
             StringBuilder str = new StringBuilder();
             foreach (var item in lista)
             {
                 str.AppendLine($@"id={item.Id} pai:{item.Pai} filhos: {item.Filhos} {item.Nome} ");
-                str.AppendLine(Analizar(Listar(item.Id)));
+                str.AppendLine(Conteudo(Listar(item.Id)));
             }
             return str.ToString();
         }
-        */
+
+        public static void Resetar()
+        {
+            _pratos.Clear();
+        }
+        
 
 
 

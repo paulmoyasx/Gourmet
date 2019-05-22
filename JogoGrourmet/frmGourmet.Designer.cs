@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGourmet));
             this.InicioLabel = new System.Windows.Forms.Label();
             this.IniciarButton = new System.Windows.Forms.Button();
+            this.ResetarListaPic = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ResetarListaPic)).BeginInit();
             this.SuspendLayout();
             // 
             // InicioLabel
@@ -44,7 +46,6 @@
             this.InicioLabel.Size = new System.Drawing.Size(236, 19);
             this.InicioLabel.TabIndex = 0;
             this.InicioLabel.Text = "Pense em um prato que gosta...";
-            this.InicioLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.InicioLabel_MouseClick);
             // 
             // IniciarButton
             // 
@@ -58,11 +59,23 @@
             this.IniciarButton.UseVisualStyleBackColor = true;
             this.IniciarButton.Click += new System.EventHandler(this.IniciarButton_Click);
             // 
+            // ResetarListaPic
+            // 
+            this.ResetarListaPic.Image = ((System.Drawing.Image)(resources.GetObject("ResetarListaPic.Image")));
+            this.ResetarListaPic.Location = new System.Drawing.Point(6, 100);
+            this.ResetarListaPic.Name = "ResetarListaPic";
+            this.ResetarListaPic.Size = new System.Drawing.Size(19, 19);
+            this.ResetarListaPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ResetarListaPic.TabIndex = 2;
+            this.ResetarListaPic.TabStop = false;
+            this.ResetarListaPic.Click += new System.EventHandler(this.ResetarListaPic_Click);
+            // 
             // frmGourmet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 126);
+            this.Controls.Add(this.ResetarListaPic);
             this.Controls.Add(this.IniciarButton);
             this.Controls.Add(this.InicioLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -71,7 +84,9 @@
             this.MaximizeBox = false;
             this.Name = "frmGourmet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Jogo Gourmet - Paul Moya V2";
+            this.Text = "Jogo Gourmet - Paul Moya V3";
+            this.Load += new System.EventHandler(this.FrmGourmet_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ResetarListaPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,5 +96,6 @@
 
         private System.Windows.Forms.Label InicioLabel;
         private System.Windows.Forms.Button IniciarButton;
+        private System.Windows.Forms.PictureBox ResetarListaPic;
     }
 }

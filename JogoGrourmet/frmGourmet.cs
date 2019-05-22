@@ -21,6 +21,14 @@ namespace JogoGrourmet
             InitializeComponent();
         }
 
+        private void FrmGourmet_Load(object sender, EventArgs e)
+        {
+            ToolTip tTip = new ToolTip();
+            tTip.SetToolTip(ResetarListaPic, "Resetar Lista...");
+
+        }
+
+
         private void IniciarButton_Click(object sender, EventArgs e)
         {
             try
@@ -50,15 +58,42 @@ namespace JogoGrourmet
         private void AprenderPrato(PratoModel prato)
         {
             string novoPrato = Interaction.InputBox("Qual prato você pensou ?", "Desisto");
-            if (!string.IsNullOrEmpty(novoPrato))
+            string validacao = ValidarPrato(prato, novoPrato);
+            if (validacao == "")
             {
                 string novoPai = Interaction.InputBox($"{ novoPrato} é ____________ mas { prato.Nome} não.", "Complete");
-                if (!string.IsNullOrEmpty(novoPai))
+                validacao = ValidarPrato(prato, novoPai);
+                if (validacao == "")
                 {
                     prato = PratoService.Adicionar(new PratoModel { Nome = novoPai, Pai = prato.Pai });
-                    PratoService.Adicionar(new PratoModel { Nome = novoPrato, Pai = prato.Id});
+                    PratoService.Adicionar(new PratoModel { Nome = novoPrato, Pai = prato.Id });
+                }
+                else
+                {
+                    MessageBox.Show(validacao, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            else
+            {
+                MessageBox.Show(validacao, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private string ValidarPrato(PratoModel prato, string nome)
+        {
+            StringBuilder retorno = new StringBuilder("");
+            if (string.IsNullOrEmpty(nome))
+            {
+                retorno.AppendLine("Não foi especificado um nome.");
+            }
+            else
+            {
+                if ((prato != null) && prato.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
+
+                PratoModel pai = PratoService.Consutlar(prato.Pai);
+                if ((pai!=null) && pai.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
+            }
+            return retorno.ToString();
         }
                
         private PratoModel PerguntarPrato(List<PratoModel> pratos)
@@ -82,11 +117,13 @@ namespace JogoGrourmet
         }
 
 
-        private void InicioLabel_MouseClick(object sender, MouseEventArgs e)
+        private void ResetarListaPic_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (MessageBox.Show(PratoService.Conteudo(), "Deseja Resetar a lista de pratos ?",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)==DialogResult.Yes)
             {
-                //MessageBox.Show(PratoService.Analizar(), "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PratoService.Resetar();
+                MessageBox.Show("Lista Resetada!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

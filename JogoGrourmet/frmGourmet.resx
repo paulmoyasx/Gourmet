@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ResetarListaPic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFlSURBVDhP1ZNBTsJQEIZbQE8ECxZNKEJMqIgnABfgDfAY
+        uEBqkEIthjapwQ3XwAWwa+gFSN7KBBYlGd8/oU2MGnVlnORPv7z55897SUeJomi93+8FFASBmM9fpOYi
+        m80LRVFYuVyezyB4Yj9mFQmvJKvdviZp/pHgRWEWAWK73VKxeEKVSoWq1XNWrXbxTvE5PPBiBrN4gkDa
+        ZrOhZrNJ9XpdqkGt1hU1GpesmNGDB14UZpOAxWJxuKJKmcwxcyqVoXT6iBlfVU0xw/shYLVacbPTuSHH
+        cZh7PZMsa8jc79+TaZrM8H4ZYJp35Ps+82hk02TiMo/Hj2Tb9vcB3e4teZ7HPBgMeBBs2w/yNtZvA6w/
+        D/hXT1gul9wcDkc0m82YXdel6fSZ2fefkmB4k4B4mcIw5KamaVQun0pWSdeLVCqVmfH/Fwo6e+A9BPAy
+        8TrvdjthGGfJCqtq+lM2jCp7MRNF0foNI6mTwmiEDK0AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAQAQEAAAAEAIAAoQAAARgAAACAgAAABACAAKBAAAG5AAAAYGAAAAQAgACgJAACWUAAAEBAAAAEA
