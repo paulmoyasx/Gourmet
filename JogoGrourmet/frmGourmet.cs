@@ -58,11 +58,11 @@ namespace JogoGrourmet
         private void AprenderPrato(PratoModel prato)
         {
             string novoPrato = Interaction.InputBox("Qual prato você pensou ?", "Desisto");
-            string validacao = ValidarPrato(prato, novoPrato);
+            string validacao = PratoService.ValidarPrato(prato, novoPrato);
             if (validacao == "")
             {
                 string novoPai = Interaction.InputBox($"{ novoPrato} é ____________ mas { prato.Nome} não.", "Complete");
-                validacao = ValidarPrato(prato, novoPai);
+                validacao = PratoService.ValidarPrato(prato, novoPai);
                 if (validacao == "")
                 {
                     prato = PratoService.Adicionar(new PratoModel { Nome = novoPai, Pai = prato.Pai });
@@ -77,23 +77,6 @@ namespace JogoGrourmet
             {
                 MessageBox.Show(validacao, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private string ValidarPrato(PratoModel prato, string nome)
-        {
-            StringBuilder retorno = new StringBuilder("");
-            if (string.IsNullOrEmpty(nome))
-            {
-                retorno.AppendLine("Não foi especificado um nome.");
-            }
-            else
-            {
-                if ((prato != null) && prato.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
-
-                PratoModel pai = PratoService.Consutlar(prato.Pai);
-                if ((pai!=null) && pai.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
-            }
-            return retorno.ToString();
         }
                
         private PratoModel PerguntarPrato(List<PratoModel> pratos)

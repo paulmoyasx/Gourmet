@@ -72,9 +72,24 @@ namespace JogoGrourmet
         {
             _pratos.Clear();
         }
-        
 
 
+        public static string ValidarPrato(PratoModel prato, string nome)
+        {
+            StringBuilder retorno = new StringBuilder("");
+            if (string.IsNullOrEmpty(nome))
+            {
+                retorno.AppendLine("Não foi especificado um nome.");
+            }
+            else
+            {
+                if ((prato != null) && prato.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
+
+                PratoModel pai = PratoService.Consutlar(prato.Pai);
+                if ((pai != null) && pai.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
+            }
+            return retorno.ToString();
+        }
 
 
 
