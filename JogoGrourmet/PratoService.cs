@@ -83,7 +83,7 @@ namespace JogoGrourmet
             }
             else
             {
-                if ((prato != null) && prato.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
+                if ((prato != null) && prato.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} foi á úitima opção.");
 
                 PratoModel pai = PratoService.Consutlar(prato.Pai);
                 if ((pai != null) && pai.Nome.ToUpper().Trim() == nome.ToUpper().Trim()) retorno.AppendLine($" {nome} já existe na úitima opção.");
